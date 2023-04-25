@@ -87,8 +87,7 @@ export default {
             );
             listPlaces.value = result.results;
             pageToken.value = result.nextPagetoken || null;
-            props.myArray= listPlaces.value[0].geometry.location
-            
+            props.myArray= listPlaces.value[0].geometry.location ||{lat:13.7563309,lng:100.5017651}
         };
         const loadMore = async () => {
             if (end.value<20){
